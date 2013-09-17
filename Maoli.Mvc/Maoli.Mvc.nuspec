@@ -28,8 +28,4 @@
       <dependency id="Maoli.js" version="0.2.1.0" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="\Scripts\jquery.validate.maoli.js" target="content\Scripts\jquery.validate.maoli.js" />
-    <file src="\Scripts\jquery.validate.maoli.min.js" target="content\Scripts\jquery.validate.maoli.min.js" />
-  </files>
 </package>
