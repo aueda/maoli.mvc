@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maoli.Mvc", "Maoli.Mvc\Maoli.Mvc.csproj", "{34976F29-A360-4831-AFAD-83F75472B030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maoli.Mvc.Tests", "Maoli.Mvc.Tests\Maoli.Mvc.Tests.csproj", "{A5CA152E-210F-4C5C-AE59-94EAA805B725}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{409C0F12-2260-479A-9619-3E1E55C932D5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C79CEC32-DD71-4AEF-AB37-882873FF1BD4}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34976F29-A360-4831-AFAD-83F75472B030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34976F29-A360-4831-AFAD-83F75472B030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34976F29-A360-4831-AFAD-83F75472B030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34976F29-A360-4831-AFAD-83F75472B030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5CA152E-210F-4C5C-AE59-94EAA805B725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CA152E-210F-4C5C-AE59-94EAA805B725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CA152E-210F-4C5C-AE59-94EAA805B725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CA152E-210F-4C5C-AE59-94EAA805B725}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
