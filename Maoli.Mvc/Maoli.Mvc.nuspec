@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="2.5">
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Maoli.Mvc</title>
+    <authors>Adriano Ueda</authors>
+    <owners>Adriano Ueda</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/aueda/maoli.mvc</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+      $description$ For documentation visit https://github.com/aueda/maoli.mvc/
+    </description>
+    <summary>
+      Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF and CNPJ).
+    </summary
+    <copyright>Copyright (c) 2013 Adriano Ueda</copyright>
+    <language />
+    <tags>c# asp.net mvc cpf cnpj</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+    <dependencies>
+      <dependency id="jQuery.Validation" version="1.11.1" />
+      <dependency id="Maoli" version="0.2.1.0" />
+      <dependency id="Maoli.js" version="0.2.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="\Scripts\jquery.validate.maoli.js" target="content\Scripts\jquery.validate.maoli.js" />
+    <file src="\Scripts\jquery.validate.maoli.min.js" target="content\Scripts\jquery.validate.maoli.min.js" />
+  </files>
+</package>
