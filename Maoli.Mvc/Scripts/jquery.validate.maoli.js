@@ -21,7 +21,7 @@
 
         var punctuation = $(element).data("val-cnpj-punctuation") || "loose";
 
-        return maoli.Cnpf.validate(value, punctuation);
+        return maoli.Cnpj.validate(value, punctuation);
     });
 
     validator.addMethod("cpf_validator", function (value, element) {
