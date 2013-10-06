@@ -1,9 +1,11 @@
 ﻿namespace Maoli.Mvc.Tests
 {
     using System;
+    using System.Web.Mvc;
     using Maoli;
     using Maoli.Mvc;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
 
     [TestClass]
     public class CpfAttributeTest
@@ -70,6 +72,21 @@
             var actual = attr.FormatErrorMessage(string.Empty);
 
             Assert.AreEqual<string>(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetClientValidationRulesReturnsValidationTypeConsistingOnlyOfLowercaseLetters()
+        {
+            Mock<ModelMetadataProvider> provider = new Mock<ModelMetadataProvider>();
+            Mock<ModelMetadata> metadata = new Mock<ModelMetadata>(provider.Object, null, null, typeof(string), null);
+
+            var attr = new CpfAttribute();
+            var expected = "cpf";
+
+            foreach (var validationRule in attr.GetClientValidationRules(metadata.Object, null))
+            {
+                Assert.AreEqual<string>(expected, validationRule.ValidationType);
+            }
         }
     }
 }
