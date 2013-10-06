@@ -44,7 +44,7 @@
 
             var rule = new ModelClientValidationRule();
 
-            rule.ValidationType = "Cnpj";
+            rule.ValidationType = "cnpj";
             rule.ErrorMessage = this.FormatErrorMessage(metadata.GetDisplayName());
             rule.ValidationParameters.Add("punctuation", punctuationName);
 
