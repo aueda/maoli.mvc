@@ -18,6 +18,8 @@
     <copyright>Copyright (c) 2013 Adriano Ueda</copyright>
     <language />
     <tags>AspNet Mvc AspNetMvc Cpf Cnpj Cep</tags>
+    <releaseNotes>- Implemented CEP validation.
+- Marked all attributes as sealed.</releaseNotes>
     <dependencies>
       <dependency id="jQuery.Validation" version="1.11.1" />
       <dependency id="Maoli" version="0.2.2-alpha" />
