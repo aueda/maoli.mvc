@@ -9,13 +9,25 @@
 
     var maoli = window.Maoli,
         $ = window.jQuery,
-        validator = null;
+        validator = null,
+		addCepMethod = function() {
+		    validator.addMethod("cep_validator", function (value, element) {
+
+		        var punctuation = $(element).data("val-cep-punctuation") || "loose";
+
+		        return maoli.Cep.validate(value, punctuation);
+		    });
+
+		    validator.unobtrusive.adapters.addBool('cep', 'cep_validator');
+		};
 
     if (maoli === "undefined" || $ === "undefined" || $.validator === "undefined") {
         return;
     }
 
     validator = $.validator;
+
+    addCepMethod();
 
     validator.addMethod("cnpj_validator", function (value, element) {
 
@@ -34,5 +46,7 @@
     validator.unobtrusive.adapters.addBool('cnpj', 'cnpj_validator');
 
     validator.unobtrusive.adapters.addBool('cpf', 'cpf_validator');
+
+
 
 }(this));

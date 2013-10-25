@@ -50,7 +50,7 @@
 
             var rule = new ModelClientValidationRule();
 
-            rule.ValidationType = "Cep";
+            rule.ValidationType = "cep";
             rule.ErrorMessage = this.FormatErrorMessage(metadata.GetDisplayName());
             rule.ValidationParameters.Add("punctuation", punctuationName);
 

@@ -11,7 +11,7 @@
 
     window.Maoli = maoli;
 
-    maoli.version = "0.2.1.0";
+    maoli.version = "0.2.2-alpha";
 
     maoli.Cpf = (function () {
 
@@ -156,6 +156,32 @@
                 calcDigit2 = createChecksum(value.substring(0, 13), multiplier2);
 
                 isValid = inputDigit1 === calcDigit1 && inputDigit2 === calcDigit2;
+
+                return isValid;
+            };
+
+        return {
+            validate: validate
+        };
+    }());
+
+    maoli.Cep = (function () {
+        var regexValidations = {
+                loose: /^(\d{5}\-\d{3})|(\d{8})$/ig,
+                strict: /^(\d{5}\-\d{3})$/ig
+            },
+            validate = function (value, punctuation) {
+                var isValid = false;
+
+                punctuation = punctuation || "loose";
+
+                value = value.trim();
+
+                if (!regexValidations[punctuation]) {
+                    return false;
+                }
+
+                isValid = (new RegExp(regexValidations[punctuation])).test(value);
 
                 return isValid;
             };
