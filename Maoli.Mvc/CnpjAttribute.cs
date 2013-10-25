@@ -7,7 +7,7 @@
     using Maoli;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class CnpjAttribute : ValidationAttribute, IClientValidatable
+    public sealed class CnpjAttribute : ValidationAttribute, IClientValidatable
     {
         private CnpjPunctuation punctuation = CnpjPunctuation.Loose;
 

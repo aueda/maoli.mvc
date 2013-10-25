@@ -7,7 +7,7 @@
     using Maoli;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class CepAttribute : ValidationAttribute, IClientValidatable
+    public sealed class CepAttribute : ValidationAttribute, IClientValidatable
     {
         private CepPunctuation punctuation = CepPunctuation.Loose;
 

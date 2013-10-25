@@ -7,7 +7,7 @@
     using Maoli;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class CpfAttribute : ValidationAttribute, IClientValidatable
+    public sealed class CpfAttribute : ValidationAttribute, IClientValidatable
     {
         private CpfPunctuation punctuation = CpfPunctuation.Loose;
 
