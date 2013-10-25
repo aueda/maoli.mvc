@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Maoli.Mvc.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Maoli, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
