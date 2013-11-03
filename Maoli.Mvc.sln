@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maoli.Mvc", "Maoli.Mvc\Maoli.Mvc.csproj", "{34976F29-A360-4831-AFAD-83F75472B030}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maoli.Mvc.Tests", "Maoli.Mvc.Tests\Maoli.Mvc.Tests.csproj", "{A5CA152E-210F-4C5C-AE59-94EAA805B725}"
