@@ -19,7 +19,8 @@
     <language />
     <tags>AspNet Mvc AspNetMvc Cpf Cnpj Cep</tags>
     <releaseNotes>- Implemented CEP validation.
-- Marked all attributes as sealed.</releaseNotes>
+- Marked all attributes as sealed.
+- Implemented conditional validation for CPF and CNPJ.</releaseNotes>
     <dependencies>
       <dependency id="jQuery.Validation" version="1.11.1" />
       <dependency id="Maoli" version="0.2.2-alpha" />

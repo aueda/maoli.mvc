@@ -20,12 +20,12 @@
 
 		    validator.unobtrusive.adapters.addBool('cep', 'cep_validator');
 		},
-        addCpfIfMethod = function () {
-            validator.addMethod("cpfif_validator", function (value, element) {
+        addCpfMethod = function () {
+            validator.addMethod("cpf_validator", function (value, element) {
 
-                var punctuation = $(element).data("val-cpfif-punctuation") || "loose",
-                    testProperty = $(element).data("val-cpfif-testproperty"),
-                    testPropertyValue = $(element).data("val-cpfif-testpropertyvalue").toString(),
+                var punctuation = $(element).data("val-cpf-punctuation") || "loose",
+                    testProperty = $(element).data("val-cpf-testproperty"),
+                    testPropertyValue = $(element).data("val-cpf-testpropertyvalue").toString(),
                     isValid = maoli.Cpf.validate(value, punctuation);
 
 				if (value === "") {
@@ -41,14 +41,14 @@
                 return isValid;
             });
 
-            validator.unobtrusive.adapters.addBool('cpfif', 'cpfif_validator');
+            validator.unobtrusive.adapters.addBool('cpf', 'cpf_validator');
         },
-        addCnpjIfMethod = function () {
-            validator.addMethod("cnpjif_validator", function (value, element) {
+        addCnpjMethod = function () {
+            validator.addMethod("cnpj_validator", function (value, element) {
 
-                var punctuation = $(element).data("val-cnpjif-punctuation") || "loose",
-                    testProperty = $(element).data("val-cnpjif-testproperty"),
-                    testPropertyValue = $(element).data("val-cnpjif-testpropertyvalue").toString(),
+                var punctuation = $(element).data("val-cnpj-punctuation") || "loose",
+                    testProperty = $(element).data("val-cnpj-testproperty"),
+                    testPropertyValue = $(element).data("val-cnpj-testpropertyvalue").toString(),
                     isValid = maoli.Cnpj.validate(value, punctuation);
 
 				if (value === "") {
@@ -64,7 +64,7 @@
                 return isValid;
             });
 
-            validator.unobtrusive.adapters.addBool('cnpjif', 'cnpjif_validator');
+            validator.unobtrusive.adapters.addBool('cnpj', 'cnpj_validator');
         };
 
     if (maoli === "undefined" || $ === "undefined" || $.validator === "undefined") {
@@ -75,26 +75,8 @@
 
     addCepMethod();
 
-    addCpfIfMethod();
+    addCpfMethod();
 
-    addCnpjIfMethod();
-
-    validator.addMethod("cnpj_validator", function (value, element) {
-
-        var punctuation = $(element).data("val-cnpj-punctuation") || "loose";
-
-        return maoli.Cnpj.validate(value, punctuation);
-    });
-
-    validator.addMethod("cpf_validator", function (value, element) {
-
-        var punctuation = $(element).data("val-cpf-punctuation") || "loose";
-
-        return maoli.Cpf.validate(value, punctuation);
-    });
-
-    validator.unobtrusive.adapters.addBool('cnpj', 'cnpj_validator');
-
-    validator.unobtrusive.adapters.addBool('cpf', 'cpf_validator');
+    addCnpjMethod();
 
 }(this));

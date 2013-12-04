@@ -11,6 +11,22 @@
     public class CpfAttributeTest
     {
         [TestMethod]
+        public void ConstructorInitializesTestPropertyToEmptyString()
+        {
+            var attr = new CpfAttribute();
+
+            Assert.AreEqual<string>(string.Empty, attr.TestProperty);
+        }
+
+        [TestMethod]
+        public void ConstructorInitializesTestValueToEmptyString()
+        {
+            var attr = new CpfAttribute();
+
+            Assert.AreEqual<string>(string.Empty, attr.TestValue);
+        }
+
+        [TestMethod]
         public void IsValidReturnsTrueIfCpfIsValidAndLoose()
         {
             var attr = new CpfAttribute();
@@ -86,6 +102,45 @@
             foreach (var validationRule in attr.GetClientValidationRules(metadata.Object, null))
             {
                 Assert.AreEqual<string>(expected, validationRule.ValidationType);
+            }
+        }
+
+        [TestMethod]
+        public void GetClientValidationRulesReturnsTestPropertyIfDefined()
+        {
+            var attr = new CpfAttribute();
+
+            attr.TestProperty = "PersonType";
+            attr.TestValue = "1";
+
+            Mock<ModelMetadataProvider> provider = new Mock<ModelMetadataProvider>();
+            Mock<ModelMetadata> metadata = new Mock<ModelMetadata>(provider.Object, null, null, typeof(string), null);
+
+            var rules = attr.GetClientValidationRules(metadata.Object, null);
+
+            foreach (var rule in rules)
+            {
+                Assert.IsTrue(rule.ValidationParameters.Count == 3);
+                Assert.AreEqual<string>("PersonType", rule.ValidationParameters["testproperty"] as string ?? "");
+                Assert.AreEqual<string>("1", rule.ValidationParameters["testpropertyvalue"] as string ?? "");
+            }
+        }
+
+        [TestMethod]
+        public void GetClientValidationRulesNotReturnsTestPropertyIfNotDefined()
+        {
+            var attr = new CpfAttribute();
+
+            Mock<ModelMetadataProvider> provider = new Mock<ModelMetadataProvider>();
+            Mock<ModelMetadata> metadata = new Mock<ModelMetadata>(provider.Object, null, null, typeof(string), null);
+
+            var rules = attr.GetClientValidationRules(metadata.Object, null);
+
+            foreach (var rule in rules)
+            {
+                Assert.IsTrue(rule.ValidationParameters.Count == 1);
+                Assert.IsFalse(rule.ValidationParameters.ContainsKey("testproperty"));
+                Assert.IsFalse(rule.ValidationParameters.ContainsKey("testpropertyvalue"));
             }
         }
     }

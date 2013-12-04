@@ -53,8 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CepAttribute.cs" />
-    <Compile Include="CnpjIfAttribute.cs" />
-    <Compile Include="CpfIfAttribute.cs" />
     <Compile Include="PunctuatedCpfAttribute.cs" />
     <Compile Include="CnpjAttribute.cs" />
     <Compile Include="CpfAttribute.cs" />
