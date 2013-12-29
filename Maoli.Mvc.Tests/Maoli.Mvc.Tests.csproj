@@ -65,6 +65,7 @@
     <Compile Include="CnpjAttributeTest.cs" />
     <Compile Include="PunctuatedCpfAttributeTest.cs" />
     <Compile Include="PunctuatedCnpjAttributeTest.cs" />
+    <Compile Include="CepAttributeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Maoli.Mvc\Maoli.Mvc.csproj">
