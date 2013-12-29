@@ -1,6 +1,6 @@
 #Maoli.Mvc
 
-Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF and CNPJ),
+Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF, CNPJ and CEP),
 compatible with .NET Framework 4.0 and above.
 
 Currently implements:
@@ -13,6 +13,18 @@ For client-side validation of CPF and CNPJ, please see [Maoli.js](https://github
 For server-side validation of CPF and CNPJ, please see [Maoli](https://github.com/aueda/maoli/).
 
 ## Documentation
+
+### Cep
+
+``Cep`` - this attribute checks if a string value is a valid CEP representation.
+
+```c#
+	public class CepModel
+    {
+        [Cep("CEP is invalid")]
+        public string Cep { get; set; }
+    }
+```
 
 ### Cpf
 
