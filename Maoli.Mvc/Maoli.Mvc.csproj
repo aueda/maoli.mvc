@@ -39,7 +39,7 @@
   <ItemGroup>
     <Reference Include="Maoli, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Maoli.0.2.2-alpha\lib\net40\Maoli.dll</HintPath>
+      <HintPath>..\packages\Maoli.0.2.2\lib\net40\Maoli.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
