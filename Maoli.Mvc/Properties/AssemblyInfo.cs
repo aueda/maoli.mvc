@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Maoli.Mvc")]
-[assembly: AssemblyDescription("Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF and CNPJ).")]
+[assembly: AssemblyDescription("Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF, CNPJ and CEP).")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Adriano Ueda")]
 [assembly: AssemblyProduct("Maoli.Mvc")]
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.2.0")]
-[assembly: AssemblyFileVersion("0.1.2.0")]
-[assembly: AssemblyInformationalVersion("0.1.2-alpha3")]
+[assembly: AssemblyVersion("0.2.2.0")]
+[assembly: AssemblyFileVersion("0.2.2.0")]
+[assembly: AssemblyInformationalVersion("0.2.2")]
