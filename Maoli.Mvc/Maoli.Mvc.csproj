@@ -71,6 +71,7 @@
     <Content Include="Scripts\jquery.validate.maoli.min.js" />
     <Content Include="Scripts\maoli.js" />
     <Content Include="Scripts\maoli.min.js" />
+    <Content Include="StyleCop.MSBuild.ContentHook.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
