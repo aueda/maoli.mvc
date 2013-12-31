@@ -22,8 +22,8 @@
 - Marked all attributes as sealed.</releaseNotes>
     <dependencies>
       <dependency id="jQuery.Validation" version="1.11.1" />
-      <dependency id="Maoli" version="0.2.2-alpha" />
-      <dependency id="Maoli.js" version="0.2.2-alpha" />
+      <dependency id="Maoli" version="0.2.2" />
+      <dependency id="Maoli.js" version="0.2.2" />
     </dependencies>
   </metadata>
 </package>
