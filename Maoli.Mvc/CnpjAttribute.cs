@@ -6,21 +6,36 @@
     using System.Web.Mvc;
     using Maoli;
 
+    /// <summary>
+    /// Validates a CNPJ.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public sealed class CnpjAttribute : ValidationAttribute, IClientValidatable
     {
         private CnpjPunctuation punctuation = CnpjPunctuation.Loose;
 
+        /// <summary>
+        /// Initializes a new instance of the CnpjAttribute class.
+        /// </summary>
         public CnpjAttribute()
             : this("O CNPJ é inválido")
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the CnpjAttribute class.
+        /// </summary>
+        /// <param name="errorMessage">The error message to associate with a validation control if validation fails.</param>
         public CnpjAttribute(string errorMessage)
             : this(errorMessage, CnpjPunctuation.Loose)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the CnpjAttribute class.
+        /// </summary>
+        /// <param name="errorMessage">The error message to associate with a validation control if validation fails.</param>
+        /// <param name="punctuation">Indicates how punctuation will be handled.</param>
         public CnpjAttribute(string errorMessage, CnpjPunctuation punctuation)
             : base(errorMessage)
         {
@@ -40,6 +55,12 @@
         /// </summary>
         public string TestValue { get; set; }
 
+        /// <summary>
+        /// Determines whether the specified value matches the pattern of a valid CNPJ. 
+        /// </summary>
+        /// <param name="value">The value to validate.</param>
+        /// <param name="validationContext">The validation context.</param>
+        /// <returns>true if the specified value is valid or null; otherwise, false.</returns>
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var valueAsString = value as string;
@@ -140,6 +161,12 @@
             return true;
         }
 
+        /// <summary>
+        /// Gets a list of client validation rules for the property.
+        /// </summary>
+        /// <param name="metadata">The model metadata.</param>
+        /// <param name="context">The controller context.</param>
+        /// <returns>A list of remote client validation rules for the property.</returns>
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(
             ModelMetadata metadata,
             ControllerContext context)
