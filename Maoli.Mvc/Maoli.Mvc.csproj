@@ -62,6 +62,7 @@
   <ItemGroup>
     <None Include="Maoli.Mvc.nuspec" />
     <None Include="packages.config" />
+    <None Include="Scripts\jquery.validate.maoli.min.map" />
     <None Include="Scripts\maoli.min.map" />
   </ItemGroup>
   <ItemGroup>
