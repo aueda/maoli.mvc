@@ -1,5 +1,7 @@
 #Maoli.Mvc
 
+[![Build Status](https://travis-ci.org/aueda/maoli.mvc.svg?branch=feat-0.2.5-alpha1)](https://travis-ci.org/aueda/maoli.mvc/)
+
 Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF, CNPJ and CEP),
 compatible with .NET Framework 4.0 and above.
 
