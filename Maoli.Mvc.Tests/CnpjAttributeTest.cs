@@ -5,10 +5,9 @@
     using System.Web.Mvc;
     using Maoli;
     using Maoli.Mvc;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
+    using Xunit;
 
-    [TestClass]
     public class CnpjAttributeTest
     {
         private const string looseValidCnpj = "63943315000192";
@@ -19,47 +18,47 @@
 
         private const string strictInvalidCnpj = "32.343.315/0001-34";
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsTrueIfCnpjIsValidAndLoose()
         {
             var attr = new CnpjAttribute();
 
             var actual = attr.IsValid("63943315000192");
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsFalseIfCnpjIsInvalidAndLoose()
         {
             var attr = new CnpjAttribute();
 
             var actual = attr.IsValid("32343315/000134");
 
-            Assert.IsFalse(actual);
+            Assert.False(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsTrueIfCnpjIsValidAndStrict()
         {
             var attr = new CnpjAttribute("The CNPJ is invalid");
 
             var actual = attr.IsValid("63.943.315/0001-92");
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsFalseIfCnpjIsInvalidAndStrict()
         {
             var attr = new CnpjAttribute("The CNPJ is invalid");
 
             var actual = attr.IsValid("32.343.315/0001-34");
 
-            Assert.IsFalse(actual);
+            Assert.False(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void ErrorMessageReturnsDefaultErrorMessage()
         {
             var expected = "O CNPJ é inválido";
@@ -68,10 +67,10 @@
 
             var actual = attr.FormatErrorMessage(string.Empty);
 
-            Assert.AreEqual<string>(expected, actual);
+            Assert.Equal<string>(expected, actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void ErrorMessageReturnsTheUserDefinedErrorMessage()
         {
             var attr = new CnpjAttribute("Error Message");
@@ -80,10 +79,10 @@
 
             var actual = attr.FormatErrorMessage(string.Empty);
 
-            Assert.AreEqual<string>(expected, actual);
+            Assert.Equal<string>(expected, actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void GetClientValidationRulesReturnsValidationTypeConsistingOnlyOfLowercaseLetters() 
         {
             Mock<ModelMetadataProvider> provider = new Mock<ModelMetadataProvider>();
@@ -94,7 +93,7 @@
 
             foreach (var validationRule in attr.GetClientValidationRules(metadata.Object, null)) 
             {
-                Assert.AreEqual<string>(expected, validationRule.ValidationType);
+                Assert.Equal<string>(expected, validationRule.ValidationType);
             }
         }
     }

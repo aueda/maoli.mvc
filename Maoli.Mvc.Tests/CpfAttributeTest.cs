@@ -4,53 +4,52 @@
     using System.Web.Mvc;
     using Maoli;
     using Maoli.Mvc;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
+    using Xunit;
 
-    [TestClass]
     public class CpfAttributeTest
     {
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsTrueIfCpfIsValidAndLoose()
         {
             var attr = new CpfAttribute();
 
             var actual = attr.IsValid("71402565860");
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsTrueIfCpfIsValidAndStrict()
         {
             var attr = new CpfAttribute("The CPF is invalid");
 
             var actual = attr.IsValid("714.025.658-60");
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsFalseIfCpfIsInvalidAndStrict()
         {
             var attr = new CpfAttribute("The CPF is invalid");
 
             var actual = attr.IsValid("825.136.769-32");
 
-            Assert.IsFalse(actual);
+            Assert.False(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsFalseIfCpfIsInvalidAndLoose()
         {
             var attr = new CpfAttribute("The CPF is invalid");
 
             var actual = attr.IsValid("82513676932");
 
-            Assert.IsFalse(actual);
+            Assert.False(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void ErrorMessageReturnsDefaultErrorMessage()
         {
             var expected = "O CPF é inválido";
@@ -59,10 +58,10 @@
 
             var actual = attr.FormatErrorMessage(string.Empty);
 
-            Assert.AreEqual<string>(expected, actual);
+            Assert.Equal<string>(expected, actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void ErrorMessageReturnsTheUserDefinedErrorMessage()
         {
             var attr = new CpfAttribute("Error Message");
@@ -71,10 +70,10 @@
 
             var actual = attr.FormatErrorMessage(string.Empty);
 
-            Assert.AreEqual<string>(expected, actual);
+            Assert.Equal<string>(expected, actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void GetClientValidationRulesReturnsValidationTypeConsistingOnlyOfLowercaseLetters()
         {
             Mock<ModelMetadataProvider> provider = new Mock<ModelMetadataProvider>();
@@ -85,7 +84,7 @@
 
             foreach (var validationRule in attr.GetClientValidationRules(metadata.Object, null))
             {
-                Assert.AreEqual<string>(expected, validationRule.ValidationType);
+                Assert.Equal<string>(expected, validationRule.ValidationType);
             }
         }
     }

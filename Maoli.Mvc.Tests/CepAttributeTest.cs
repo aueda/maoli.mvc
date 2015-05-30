@@ -5,53 +5,52 @@
     using System.Web.Mvc;
     using Maoli;
     using Maoli.Mvc;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
+    using Xunit;
 
-    [TestClass]
     public class CepAttributeTest
     {
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsTrueIfCepIsValidAndLoose()
         {
             var attr = new CepAttribute();
 
             var actual = attr.IsValid("12345678");
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsFalseIfCepIsInvalidAndLoose()
         {
             var attr = new CepAttribute();
 
             var actual = attr.IsValid("123456-78");
 
-            Assert.IsFalse(actual);
+            Assert.False(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsTrueIfCepIsValidAndStrict()
         {
             var attr = new CepAttribute();
 
             var actual = attr.IsValid("12345-678");
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsValidReturnsFalseIfCepIsInvalidAndStrict()
         {
             var attr = new CepAttribute();
 
             var actual = attr.IsValid("12345-67a");
 
-            Assert.IsFalse(actual);
+            Assert.False(actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void ErrorMessageReturnsDefaultErrorMessage()
         {
             var expected = "O CEP é inválido";
@@ -60,10 +59,10 @@
 
             var actual = attr.FormatErrorMessage(string.Empty);
 
-            Assert.AreEqual<string>(expected, actual);
+            Assert.Equal<string>(expected, actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void ErrorMessageReturnsTheUserDefinedErrorMessage()
         {
             var attr = new CepAttribute("Error Message");
@@ -72,10 +71,10 @@
 
             var actual = attr.FormatErrorMessage(string.Empty);
 
-            Assert.AreEqual<string>(expected, actual);
+            Assert.Equal<string>(expected, actual);
         }
 
-        [TestMethod]
+        [Fact]
         public void GetClientValidationRulesReturnsValidationTypeConsistingOnlyOfLowercaseLetters()
         {
             Mock<ModelMetadataProvider> provider = new Mock<ModelMetadataProvider>();
@@ -86,7 +85,7 @@
 
             foreach (var validationRule in attr.GetClientValidationRules(metadata.Object, null))
             {
-                Assert.AreEqual<string>(expected, validationRule.ValidationType);
+                Assert.Equal<string>(expected, validationRule.ValidationType);
             }
         }
     }
