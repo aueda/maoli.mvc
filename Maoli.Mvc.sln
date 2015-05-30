@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maoli.Mvc", "Maoli.Mvc\Maoli.Mvc.csproj", "{34976F29-A360-4831-AFAD-83F75472B030}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maoli.Mvc.Tests", "Maoli.Mvc.Tests\Maoli.Mvc.Tests.csproj", "{A5CA152E-210F-4C5C-AE59-94EAA805B725}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{409C0F12-2260-479A-9619-3E1E55C932D5}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C79CEC32-DD71-4AEF-AB37-882873FF1BD4}"
 	ProjectSection(SolutionItems) = preProject
