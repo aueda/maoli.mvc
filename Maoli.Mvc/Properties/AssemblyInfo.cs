@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Adriano Ueda")]
 [assembly: AssemblyProduct("Maoli.Mvc")]
-[assembly: AssemblyCopyright("Copyright © Adriano Ueda 2013")]
+[assembly: AssemblyCopyright("Copyright © Adriano Ueda 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,6 +32,23 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.2.2.1")]
-[assembly: AssemblyFileVersion("0.2.2.1")]
-[assembly: AssemblyInformationalVersion("0.2.2.1")]
+[assembly: AssemblyVersion("0.2.5")]
+#if NET35
+[assembly: AssemblyInformationalVersion("0.2.5-net35")]
+#else
+#if NET40
+[assembly: AssemblyInformationalVersion("0.2.5-net40")]
+#else
+#if NET45
+[assembly: AssemblyInformationalVersion("0.2.5-net45")]
+#else
+#if NET451
+[assembly: AssemblyInformationalVersion("0.2.5-net451")]
+#else
+[assembly: AssemblyInformationalVersion("0.2.5-other")]
+#endif
+#endif
+#endif
+#endif
+
+[assembly: AssemblyFileVersion("0.2.5")]
