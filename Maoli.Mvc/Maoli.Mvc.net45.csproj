@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34976F29-A360-4831-AFAD-83F75472B030}</ProjectGuid>
+    <ProjectGuid>{28AB642D-3F5C-4578-B277-6DFD9D7AC358}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Maoli.Mvc</RootNamespace>
     <AssemblyName>Maoli.Mvc</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -17,27 +17,28 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\Debug\net45\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>obj\$(Configuration)\net45</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release\net45\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS;NET45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Release\Maoli.Mvc.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net45\Maoli.Mvc.xml</DocumentationFile>
+    <IntermediateOutputPath>obj\$(Configuration)\net45</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Maoli, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Maoli.0.2.2\lib\net40\Maoli.dll</HintPath>
+    <Reference Include="Maoli">
+      <HintPath>..\packages\Maoli.0.2.5-alpha1\lib\net45\Maoli.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -85,16 +86,10 @@
     <Compile Include="PunctuatedCnpjAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Maoli.Mvc.nuspec" />
     <None Include="packages.config" />
-    <None Include="Scripts\jquery.validate.maoli.min.map" />
     <None Include="Scripts\maoli.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery.validate.maoli.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\jquery.validate.maoli.min.js" />
     <Content Include="Scripts\maoli.js" />
     <Content Include="Scripts\maoli.min.js" />
   </ItemGroup>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata minClientVersion="2.5">
-    <id>$id$</id>
-    <version>$version$</version>
+    <id>Maoli.Mvc</id>
+    <version>0.2.5-alpha1</version>
     <title>Maoli.Mvc</title>
     <authors>Adriano Ueda</authors>
     <owners>Adriano Ueda</owners>
@@ -10,19 +10,24 @@
     <projectUrl>https://github.com/aueda/maoli.mvc</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-      $description$ For documentation visit https://github.com/aueda/maoli.mvc/
+      Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF, CNPJ and CEP) For documentation visit https://github.com/aueda/maoli.mvc/
     </description>
     <summary>
       Maoli.Mvc is ASP.NET MVC helper library for common brazilian business rules (CPF, CNPJ and CEP).
     </summary>
-    <copyright>Copyright (c) 2013 Adriano Ueda</copyright>
+    <copyright>Copyright (c) 2015 Adriano Ueda</copyright>
     <language />
     <tags>AspNet Mvc AspNetMvc Cpf Cnpj Cep</tags>
-    <releaseNotes>- Fixed the minified version of the script file.</releaseNotes>
+    <releaseNotes>- Multi-framework NuGet release
+      - Compatibility fixes
+    </releaseNotes>
     <dependencies>
-      <dependency id="jQuery.Validation" version="1.11.1" />
-      <dependency id="Maoli" version="0.2.2" />
+      <dependency id="Maoli" version="0.2.5-alpha1" />
       <dependency id="Maoli.js" version="0.2.2" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="Maoli.Mvc\bin\Release\**Maoli.Mvc.dll" target="lib" />
+    <file src="Maoli.Mvc\bin\Release\**Maoli.Mvc.xml" target="lib" />
+  </files>
 </package>
